@@ -10,7 +10,7 @@
 /*
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
-aplly plugin: 'application'
+apply plugin: 'application'
 
 mainClassName = "com.null.tictactoe.TicTacToe"
 
