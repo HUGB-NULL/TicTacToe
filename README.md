@@ -27,13 +27,13 @@ the project to build on a fresh machine
         ```java
         // I am a comment -John Smith
         int variable = 0;
-        return variable;
+        return variable;````
     * Function and variable names should be descriptive
     * Brackets should __not__ be inline with the function name.
         ```java
         ThisFunctionCalculatesSum(int a, int b)
         { 
             return a+b; 
-        }
+        }```
     * All if-statements and loops should have brackets, even though they only contain one line of code.
         
