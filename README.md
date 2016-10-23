@@ -45,4 +45,9 @@
         ```
         
     * All if-statements and loops should have brackets, even though they only contain one line of code.
-        
+
+* #### Class diagram
+   ![alt text](http://i.imgur.com/pwc9F86.png "Class diagram")
+   
+* #### Flowchart
+   ![alt text](http://i.imgur.com/ngvZbsU.png "Flowchart")
