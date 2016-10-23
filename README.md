@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/HUGB-NULL/TicTacToe.png)](https://travis-ci.org/HUGB-NULL/TicTacToe)
+
 # TicTacToe
 
 # The todo list is on the facebook group!!
