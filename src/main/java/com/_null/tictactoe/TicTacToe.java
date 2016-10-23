@@ -1,9 +1,9 @@
-package com.n.tictactoe;
+package com._null.tictactoe;
 
-public class ticTacToe
+public class TicTacToe
 {
 	public static void main(String[] args) {
-		ticTacToe t = new ticTacToe();
+		TicTacToe t  = new TicTacToe();
 		System.out.println(t.ticTac());
 	}
 

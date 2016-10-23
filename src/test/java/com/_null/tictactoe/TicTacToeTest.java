@@ -1,14 +1,14 @@
-package com.n.tictactoe;
+package com._null.tictactoe;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class ticTacToeTest
+public class TicTacToeTest
 {
 	@Test
     	public void checkIfTestWorks() 
 	{
-        	ticTacToe ticTacT = new ticTacToe();
+        	TicTacToe ticTacT = new TicTacToe();
        		assertEquals("Hello World!", ticTacT.ticTac()); 
 	}
 }
