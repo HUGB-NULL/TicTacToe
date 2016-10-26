@@ -3,6 +3,10 @@
 ./gradlew clean
 ./gradlew test
 ./gradlew build
-mkdir tmp 
+
+if [ ! -d tmp ]; then
+  mkdir tmp
+fi
+
 mv build/libs/TicTacToe.jar tmp/
 java -jar tmp/TicTacToe.jar
