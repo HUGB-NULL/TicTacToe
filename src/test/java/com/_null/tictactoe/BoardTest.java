@@ -10,6 +10,8 @@ public class BoardTest
 	{
         Board board = new Board();
        	assertEquals(false, board.isFull());
+       	board.input(0, 0, 'o');
+       	assertEquals(false, board.isFull());
        	for(int i = 0; i < board.max_size; i++)
     	{
     		for(int j = 0; j < board.max_size; j++)
@@ -19,4 +21,14 @@ public class BoardTest
     	}
     	assertEquals(true, board.isFull());
 	}
+
+	@Test
+    public void inputValidationTest()
+    {
+    	Board board = new Board();
+    	assertEquals(false, board.inputValidation(board.max_size));
+    	assertEquals(false, board.inputValidation(-1));
+    	assertEquals(true, board.inputValidation(board.max_size - 1));
+    	assertEquals(true, board.inputValidation(0));
+    }
 }

@@ -3,7 +3,7 @@ package com._null.tictactoe;
 public class Board
 {
 	public static final int max_size = 3;
-	private static final char[][] board = new char[max_size][max_size];
+	public static final char[][] board = new char[max_size][max_size];
 
 	public Board()
 	{
@@ -28,9 +28,26 @@ public class Board
     	return true;
     }
 
-	public void input(int x, int y, char p)
+	public void input(int x, int y, char inp_char)
   	{
-    	board[x][y] = p;
+  		if(inputValidation(x))
+  		{
+  			if(inputValidation(y))
+  			{
+    			board[x][y] = inp_char;
+    		}
+    		else System.out.println("y not valid input");
+    	}
+    	else System.out.println("x not valid input");
 	}
+
+	public boolean inputValidation(int inp)
+ 	{
+ 		if(inp >= max_size || inp < 0)
+    	{
+      		return false;
+    	}
+    	return true;
+  	}
 
 }
