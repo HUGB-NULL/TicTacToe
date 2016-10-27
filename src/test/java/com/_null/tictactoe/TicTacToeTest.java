@@ -8,7 +8,7 @@ public class TicTacToeTest
 	@Test
     public void checkIfTestWorks() 
 	{
-        	TicTacToe ticTacT = new TicTacToe();
-       		assertEquals("Hello World!", ticTacT.ticTac()); 
+        TicTacToe ticTacT = new TicTacToe();
+       	assertEquals("Hello World!", ticTacT.ticTac()); 
 	}
 }

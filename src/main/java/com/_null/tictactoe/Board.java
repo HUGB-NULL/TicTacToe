@@ -3,7 +3,7 @@ package com._null.tictactoe;
 public class Board
 {
 	public static final int max_size = 3;
-	public static final char[][] board = new char[max_size][max_size];
+	private static final char[][] board = new char[max_size][max_size];
 
 	public Board()
 	{
@@ -27,5 +27,10 @@ public class Board
         }
     	return true;
     }
+
+	public void input(int x, int y, char p)
+  	{
+    	board[x][y] = p;
+	}
 
 }
