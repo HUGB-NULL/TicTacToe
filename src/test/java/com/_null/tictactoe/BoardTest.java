@@ -3,12 +3,12 @@ package com._null.tictactoe;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class TicTacToeTest
+public class BoardTest
 {
 	@Test
     public void checkIfTestWorks() 
 	{
-        	TicTacToe ticTacT = new TicTacToe();
-       		assertEquals("Hello World!", ticTacT.ticTac()); 
+        	Board board = new Board();
+       		assertEquals("Hello Board!", board.helloBoard()); 
 	}
 }
