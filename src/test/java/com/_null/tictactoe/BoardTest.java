@@ -6,9 +6,9 @@ import org.junit.Test;
 public class BoardTest
 {
 	@Test
-    public void checkIfTestWorks() 
+    public void isFullTest() 
 	{
         	Board board = new Board();
-       		assertEquals("Hello Board!", board.helloBoard()); 
+       		assertEquals(false, board.isFull());
 	}
 }
