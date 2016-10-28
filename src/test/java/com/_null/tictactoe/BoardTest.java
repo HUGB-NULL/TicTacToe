@@ -5,6 +5,38 @@ import org.junit.Test;
 
 public class BoardTest
 {
+    @Test
+    public void checkForWinTest()
+    {
+        Board board = new Board();
+        assertEquals(false, board.checkForWin('x'));
+        board.input(0, 0, 'x');
+        board.input(0, 1, 'x');
+        board.input(0, 2, 'x');
+        assertEquals(true, board.checkForWin('x'));
+
+        board = new Board();
+        assertEquals(false, board.checkForWin('o'));
+        board.input(0, 0, 'o');
+        board.input(1, 0, 'o');
+        board.input(2, 0, 'o');
+        assertEquals(true, board.checkForWin('o'));
+
+        board = new Board();
+        assertEquals(false, board.checkForWin('x'));
+        board.input(0, 0, 'x');
+        board.input(1, 1, 'x');
+        board.input(2, 2, 'x');
+        assertEquals(true, board.checkForWin('x'));
+
+        board = new Board();
+        assertEquals(false, board.checkForWin('o'));
+        board.input(0, 2, 'o');
+        board.input(1, 1, 'o');
+        board.input(2, 0, 'o');
+        assertEquals(true, board.checkForWin('o'));
+    }
+
 	@Test
 	public void isFullTest() 
 	{
@@ -22,6 +54,34 @@ public class BoardTest
         assertEquals(true, board.isFull());
 	}
 
+    @Test
+    public void gameOverTest()
+    {
+        Board board = new Board();
+        assertEquals(false, board.gameOver('x'));
+        board.input(0, 0, 'x');
+        board.input(0, 1, 'x');
+        board.input(0, 2, 'x');
+        assertEquals(true, board.gameOver('x'));
+
+        board = new Board();
+        assertEquals(false, board.gameOver('x'));
+        assertEquals(false, board.gameOver('o'));
+        board.input(0, 0, 'x');
+        board.input(0, 1, 'x');
+        board.input(0, 2, 'o');
+        board.input(1, 0, 'o');
+        board.input(1, 1, 'o');
+        board.input(1, 2, 'x');
+        board.input(2, 0, 'x');
+        board.input(2, 1, 'o');
+        board.input(2, 2, 'x');
+        assertEquals(false, board.checkForWin('x'));
+        assertEquals(false, board.checkForWin('o'));
+        assertEquals(true, board.gameOver('x'));
+        assertEquals(true, board.gameOver('o'));
+    }
+
 	@Test
 	public void checkInputSizeTest()
 	{
@@ -36,62 +96,21 @@ public class BoardTest
 	public void checkIfFreeTest()
 	{
 		Board board = new Board();
-   		assertEquals(true, board.checkIfFree(0,0));
+   		assertEquals(true, board.checkIfFree(0, 0));
    		board.input(0, 0, 'x');
-   		assertEquals(false, board.checkIfFree(0,0));
+   		assertEquals(false, board.checkIfFree(0, 0));
 	}
 
-	@Test
-	public void checkForWinTest()
-	{
-    	Board board = new Board();
-    	assertEquals(false, board.checkForWin('x'));
-		board.input(0, 0, 'x');
-		board.input(0, 1, 'x');
-		board.input(0, 2, 'x');
-		assertEquals(true, board.checkForWin('x'));
-
-		board = new Board();
-		assertEquals(false, board.checkForWin('o'));
-    	board.input(0, 0, 'o');
-    	board.input(1, 0, 'o');
-    	board.input(2, 0, 'o');
-    	assertEquals(true, board.checkForWin('o'));
-
-    	board = new Board();
-    	assertEquals(false, board.checkForWin('x'));
-    	board.input(0, 0, 'x');
-    	board.input(1, 1, 'x');
-    	board.input(2, 2, 'x');
-    	assertEquals(true, board.checkForWin('x'));
-	}
-
-	@Test
-	public void gameOverTest()
-	{
-    	Board board = new Board();
-    	assertEquals(false, board.gameOver('x'));
-    	board.input(0, 0, 'x');
-    	board.input(0, 1, 'x');
-    	board.input(0, 2, 'x');
-    	assertEquals(true, board.gameOver('x'));
-
-    	board = new Board();
-    	assertEquals(false, board.gameOver('x'));
-    	assertEquals(false, board.gameOver('o'));
-    	board.input(0, 0, 'x');
-    	board.input(0, 1, 'x');
-    	board.input(0, 2, 'o');
-    	board.input(1, 0, 'o');
-    	board.input(1, 1, 'o');
-    	board.input(1, 2, 'x');
-    	board.input(2, 0, 'x');
-    	board.input(2, 1, 'o');
-    	board.input(2, 2, 'x');
-    	assertEquals(false, board.checkForWin('x'));
-    	assertEquals(false, board.checkForWin('o'));
-    	assertEquals(true, board.gameOver('x'));
-    	assertEquals(true, board.gameOver('o'));
-	}
+    @Test
+    public void inputTest()
+    {
+        Board board = new Board();
+        assertEquals(true, board.input(0, 0, 'x'));
+        assertEquals(false, board.input(0, 0, 'x'));
+        assertEquals(false, board.input(-1, 0, 'o'));
+        assertEquals(false, board.input(0, -1, 'o'));
+        assertEquals(false, board.input(board.max_size, 0, 'x'));
+        assertEquals(false, board.input(0, board.max_size, 'x'));
+    }
 }
 

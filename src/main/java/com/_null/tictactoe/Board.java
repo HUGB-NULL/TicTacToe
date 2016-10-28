@@ -16,18 +16,6 @@ public class Board
 		}
 	}
 
-	public boolean isFull()
-	{
-		for(int i = 0; i < max_size; i++)
-		{
-			for(int j = 0; j < max_size; j++)
-			{
-				if(board[i][j] == ' ') return false;
-			}
-        }
-    	return true;
-	}
-
 	public boolean checkForWin(char p)
 	{
 		if((board[0][0] == p && board[1][1] == p && board[2][2] == p) || 
@@ -53,6 +41,18 @@ public class Board
 			}
 		}
 		return false;
+	}
+
+	public boolean isFull()
+	{
+		for(int i = 0; i < max_size; i++)
+		{
+			for(int j = 0; j < max_size; j++)
+			{
+				if(board[i][j] == ' ') return false;
+			}
+        }
+    	return true;
 	}
 
 	public boolean gameOver(char p)
