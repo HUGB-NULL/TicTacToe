@@ -31,4 +31,13 @@ public class BoardTest
     	assertEquals(true, board.inputValidation(board.max_size - 1));
     	assertEquals(true, board.inputValidation(0));
     }
+
+    @Test
+    public void checkIfFreeTest()
+    {
+    	Board board = new Board();
+    	assertEquals(true, board.checkIfFree(0,0));
+    	board.input(0, 0, 'x');
+    	assertEquals(false, board.checkIfFree(0,0));
+    }
 }

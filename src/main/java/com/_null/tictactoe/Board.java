@@ -34,7 +34,11 @@ public class Board
   		{
   			if(inputValidation(y))
   			{
-    			board[x][y] = inp_char;
+  				if(checkIfFree(x, y))
+  				{
+    				board[x][y] = inp_char;
+    			}
+    			else System.out.println("already taken");
     		}
     		else System.out.println("y not valid input");
     	}
@@ -49,5 +53,14 @@ public class Board
     	}
     	return true;
   	}
+
+	public boolean checkIfFree(int x, int y)
+	{
+		if(board[x][y] == ' ')
+		{
+			return true;
+		}
+		return false;
+	}
 
 }
