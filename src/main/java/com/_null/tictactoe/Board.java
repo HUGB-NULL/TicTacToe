@@ -31,7 +31,7 @@ public class Board
 	public boolean checkForWin(char p)
 	{
 		if((board[0][0] == p && board[1][1] == p && board[2][2] == p) || 
-		   (board[0][2] == p && board[1][1] == p && board[0][2] == p))
+		   (board[0][2] == p && board[1][1] == p && board[2][0] == p))
 		{
 			return true;
 		}
@@ -59,7 +59,7 @@ public class Board
 	{
 		if(checkForWin(p))
 		{
-			System.out.println("Player " + p + "wins");
+			System.out.println("Player " + p + " wins");
 			return true;
 		}
 		if(isFull())
@@ -104,5 +104,20 @@ public class Board
 		}
 		return false;
 	}
+
+	public void printBoard()
+	{
+		for(int i = 0; i < max_size;i++)
+		{
+			System.out.print(" ");
+			for(int j = 0; j < max_size;j++)
+			{
+				System.out.print(board[i][j]);
+				if(j != (max_size - 1)) System.out.print(" | ");
+			}
+			System.out.println();
+			if(i != (max_size - 1)) System.out.println("-----------");
+		}
+  }
 
 }
