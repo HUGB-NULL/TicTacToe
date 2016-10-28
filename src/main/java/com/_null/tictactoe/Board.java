@@ -8,13 +8,13 @@ public class Board
 	public Board()
 	{
 		for(int i = 0; i < max_size; i++)
-    	{
-    		for(int j = 0; j < max_size; j++)
-    		{
-    			board[i][j] = ' ';
-    		}
-    	}
-  	}
+		{
+			for(int j = 0; j < max_size; j++)
+			{
+				board[i][j] = ' ';
+			}
+		}
+	}
 
 	public boolean isFull()
 	{
@@ -72,27 +72,27 @@ public class Board
 
 	public void input(int x, int y, char inp_char)
   	{
-  		if(inputValidation(x))
-  		{
-  			if(inputValidation(y))
-  			{
-  				if(checkIfFree(x, y))
-  				{
-    				board[x][y] = inp_char;
-    			}
-    			else System.out.println("already taken");
-    		}
-    		else System.out.println("y not valid input");
-    	}
-    	else System.out.println("x not valid input");
+		if(inputValidation(x))
+		{
+			if(inputValidation(y))
+			{
+				if(checkIfFree(x, y))
+				{
+					board[x][y] = inp_char;
+				}
+				else System.out.println("already taken");
+			}
+			else System.out.println("y not valid input");
+		}
+		else System.out.println("x not valid input");
 	}
 
 	public boolean inputValidation(int inp)
  	{
  		if(inp >= max_size || inp < 0)
-    	{
-      		return false;
-    	}
+		{
+			return false;
+		}
     	return true;
   	}
 
