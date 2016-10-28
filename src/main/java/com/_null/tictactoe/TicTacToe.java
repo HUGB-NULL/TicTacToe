@@ -2,13 +2,24 @@ package com._null.tictactoe;
 
 public class TicTacToe
 {
-	public static void main(String[] args) {
-		TicTacToe tic  = new TicTacToe();
-		System.out.println(tic.ticTac());
+	private Board board;
+
+	public TicTacToe() 
+	{
+		board = new Board();
 	}
 
-	public static String ticTac()
+	public void welcome() 
 	{
-		return "Hello World!";
+		System.out.println("====================");
+		System.out.println("Welcome to TicTacToe");
+		System.out.println("====================");
+		System.out.println();
+	}
+
+	public static void main(String[] args) 
+	{
+		TicTacToe tic = new TicTacToe();
+		tic.welcome();
 	}
 }
