@@ -40,4 +40,29 @@ public class BoardTest
     	board.input(0, 0, 'x');
     	assertEquals(false, board.checkIfFree(0,0));
     }
+
+    @Test
+    public void checkForWinTest()
+    {
+    	Board board = new Board();
+    	assertEquals(false, board.checkForWin('x'));
+    	board.input(0, 0, 'x');
+    	board.input(0, 1, 'x');
+    	board.input(0, 2, 'x');
+    	assertEquals(true, board.checkForWin('x'));
+
+    	board = new Board();
+    	assertEquals(false, board.checkForWin('o'));
+    	board.input(0, 0, 'o');
+    	board.input(1, 0, 'o');
+    	board.input(2, 0, 'o');
+    	assertEquals(true, board.checkForWin('o'));
+    	
+    	board = new Board();
+    	assertEquals(false, board.checkForWin('x'));
+    	board.input(0, 0, 'x');
+    	board.input(1, 1, 'x');
+    	board.input(2, 2, 'x');
+    	assertEquals(true, board.checkForWin('x'));
+    }
 }

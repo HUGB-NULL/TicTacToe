@@ -28,6 +28,33 @@ public class Board
     	return true;
     }
 
+	public boolean checkForWin(char p)
+	{
+		if((board[0][0] == p && board[1][1] == p && board[2][2] == p) || 
+		   (board[0][2] == p && board[1][1] == p && board[0][2] == p))
+		{
+			return true;
+		}
+		else
+		{
+			for(int i = 0; i < max_size;i++)
+			{
+				for(int j = 0; j < max_size;j++)
+				{
+					if(board[i][0] == p && board[i][1] == p && board[i][2] == p)
+					{
+						return true;
+					}
+					else if(board[0][j] == p && board[1][j] == p && board[2][j] == p)
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
 	public void input(int x, int y, char inp_char)
   	{
   		if(inputValidation(x))
