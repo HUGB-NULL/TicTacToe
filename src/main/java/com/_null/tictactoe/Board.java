@@ -51,8 +51,8 @@ public class Board
 			{
 				if(board[i][j] == ' ') return false;
 			}
-        }
-    	return true;
+		}
+		return true;
 	}
 
 	public boolean gameOver(char p)
@@ -76,7 +76,7 @@ public class Board
 		{
 			return false;
 		}
-    	return true;
+		return true;
   	}
 
 	public boolean isFree(int x, int y)
