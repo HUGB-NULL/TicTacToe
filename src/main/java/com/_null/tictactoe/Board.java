@@ -24,9 +24,9 @@ public class Board
 			{
 				if(board[i][j] == ' ') return false;
 			}
-        }
-    	return true;
-    }
+        	}
+    		return true;
+	}
 
 	public boolean checkForWin(char p)
 	{
@@ -93,7 +93,7 @@ public class Board
 		{
 			return false;
 		}
-    	return true;
+    		return true;
   	}
 
 	public boolean checkIfFree(int x, int y)
@@ -118,6 +118,5 @@ public class Board
 			System.out.println();
 			if(i != (max_size - 1)) System.out.println("-----------");
 		}
-  }
-
+	}
 }
