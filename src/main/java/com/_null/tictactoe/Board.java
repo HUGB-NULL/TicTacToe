@@ -55,6 +55,21 @@ public class Board
 		return false;
 	}
 
+	public boolean gameOver(char p)
+	{
+		if(checkForWin(p))
+		{
+			System.out.println("Player " + p + "wins");
+			return true;
+		}
+		if(isFull())
+		{
+			System.out.println("We have a DRAW");
+			return true;
+		}
+		return false;
+	}
+
 	public void input(int x, int y, char inp_char)
   	{
   		if(inputValidation(x))
