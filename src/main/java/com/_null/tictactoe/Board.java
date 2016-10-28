@@ -3,7 +3,7 @@ package com._null.tictactoe;
 public class Board
 {
 	public static final int max_size = 3;
-	public static final char[][] board = new char[max_size][max_size];
+	private static final char[][] board = new char[max_size][max_size];
 
 	public Board()
 	{
@@ -24,8 +24,8 @@ public class Board
 			{
 				if(board[i][j] == ' ') return false;
 			}
-        	}
-    		return true;
+        }
+    	return true;
 	}
 
 	public boolean checkForWin(char p)
@@ -59,41 +59,24 @@ public class Board
 	{
 		if(checkForWin(p))
 		{
-			System.out.println("Player " + p + " wins");
+			System.out.println("Player " + p + " wins!!!");
 			return true;
 		}
 		if(isFull())
 		{
-			System.out.println("We have a DRAW");
+			System.out.println("We have a draw!");
 			return true;
 		}
 		return false;
 	}
 
-	public void input(int x, int y, char inp_char)
-  	{
-		if(inputValidation(x))
-		{
-			if(inputValidation(y))
-			{
-				if(checkIfFree(x, y))
-				{
-					board[x][y] = inp_char;
-				}
-				else System.out.println("already taken");
-			}
-			else System.out.println("y not valid input");
-		}
-		else System.out.println("x not valid input");
-	}
-
-	public boolean inputValidation(int inp)
+	public boolean checkInputSize(int inp)
  	{
  		if(inp >= max_size || inp < 0)
 		{
 			return false;
 		}
-    		return true;
+    	return true;
   	}
 
 	public boolean checkIfFree(int x, int y)
@@ -105,8 +88,28 @@ public class Board
 		return false;
 	}
 
+	public boolean input(int x, int y, char inp_char)
+  	{
+  		if(!(checkInputSize(x) && checkInputSize(y)))
+		{
+			System.out.println("Input not correct, try again");
+			return false;
+		}
+		else if(!checkIfFree(x, y))
+		{
+			System.out.println("Cell already taken, try again");
+			return false;
+		}
+		else
+		{
+  			board[x][y] = inp_char;
+  			return true;
+  		}
+	}
+
 	public void printBoard()
 	{
+		System.out.println();
 		for(int i = 0; i < max_size;i++)
 		{
 			System.out.print(" ");
@@ -118,5 +121,6 @@ public class Board
 			System.out.println();
 			if(i != (max_size - 1)) System.out.println("-----------");
 		}
+		System.out.println();
 	}
 }
