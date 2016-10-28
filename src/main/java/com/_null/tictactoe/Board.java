@@ -79,7 +79,7 @@ public class Board
     	return true;
   	}
 
-	public boolean checkIfFree(int x, int y)
+	public boolean isFree(int x, int y)
 	{
 		if(board[x][y] == ' ')
 		{
@@ -92,12 +92,12 @@ public class Board
   	{
   		if(!(checkInputSize(x) && checkInputSize(y)))
 		{
-			System.out.println("Input not correct, try again");
+			System.out.print("Input not correct, try again: ");
 			return false;
 		}
-		else if(!checkIfFree(x, y))
+		else if(!isFree(x, y))
 		{
-			System.out.println("Cell already taken, try again");
+			System.out.print("Cell already taken, try again: ");
 			return false;
 		}
 		else

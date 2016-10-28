@@ -5,15 +5,11 @@ import java.util.Scanner;
 public class TicTacToe
 {
 	private Board board;
-	private char[] players = {'x', 'o'};
-
-	public TicTacToe() 
-	{
-		board = new Board();
-	}
+	private static final char[] players = {'x', 'o'};
 
 	public void welcome() 
 	{
+		System.out.println();
 		System.out.println("====================");
 		System.out.println("Welcome to TicTacToe");
 		System.out.println("====================");
@@ -25,9 +21,11 @@ public class TicTacToe
 		Scanner sc = new Scanner(System.in);
 		char yn_char;
 		do {
+			board = new Board();
 			runGame();
-			System.out.println("Game over. Do you want to play again? (y/n)");
+			System.out.print("Game over. Do you want to play again? (y/n): ");
 			yn_char = sc.next().charAt(0);
+			System.out.println();
 		} while(yn_char != 'n');
 		System.out.println("Thank you for playing TicTacToe. Goodbye!");
 	}
@@ -36,20 +34,19 @@ public class TicTacToe
 	{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("The game starts now!");
-		boolean gameOver = false;
-		while(!gameOver) {
+		boolean game_over = false;
+		while(!game_over) {
 			for(char p : players) 
 			{
-				System.out.println();
-				System.out.println("Player " + p + " make your move");
 				board.printBoard();
+				System.out.print("Player " + p + " make your move: ");
 				int row, column;
 				do {
 					row = sc.nextInt();
 					column = sc.nextInt();
 				} while(!board.input(row, column, p));
-				gameOver = board.gameOver(p);
-				if(gameOver) break;
+				game_over = board.gameOver(p);
+				if(game_over) break;
 			}
 		}
 		board.printBoard();

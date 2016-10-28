@@ -93,12 +93,12 @@ public class BoardTest
 	}
 
 	@Test
-	public void checkIfFreeTest()
+	public void isFreeTest()
 	{
 		Board board = new Board();
-   		assertEquals(true, board.checkIfFree(0, 0));
+   		assertEquals(true, board.isFree(0, 0));
    		board.input(0, 0, 'x');
-   		assertEquals(false, board.checkIfFree(0, 0));
+   		assertEquals(false, board.isFree(0, 0));
 	}
 
     @Test
