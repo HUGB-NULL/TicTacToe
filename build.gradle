@@ -39,6 +39,11 @@ jar {
     attributes("Main-Class": "com._null.tictactoe.TicTacToe")
   } 
 }
+
+run {
+  standardInput = System.in
+}
+
 // Task that copies the executeable .jar file to the tmp directory. Stefan Vilberg
 task copyjar(type: Copy){
 	from 'build/libs/TicTacToe.jar'
