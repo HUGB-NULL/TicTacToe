@@ -40,16 +40,29 @@ public class TicTacToe
 			{
 				board.printBoard();
 				System.out.print("Player " + p + " make your move: ");
-				int row, column;
+				int input;
 				do {
-					row = sc.nextInt();
-					column = sc.nextInt();
-				} while(!board.input(row, column, p));
+					input = sc.nextInt();
+				} while(!board.input(calcRow(input), calcColumn(input), p));
 				game_over = board.gameOver(p);
 				if(game_over) break;
 			}
 		}
 		board.printBoard();
+	}
+
+	// Calculates row from user input -Gunnar
+	public int calcRow(int inp)
+	{
+		int size = board.max_size;
+		return ((inp + (size - 1))/size) - 1;
+	}
+
+	// Calculates column from user input -Gunnar
+	public int calcColumn(int inp)
+	{
+		int size = board.max_size;
+		return (inp + (size - 1))%size;
 	}
 
 	public static void main(String[] args) 

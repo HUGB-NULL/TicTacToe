@@ -110,13 +110,16 @@ public class Board
 	public void printBoard()
 	{
 		System.out.println();
+		int cell_num =  1;
 		for(int i = 0; i < max_size;i++)
 		{
 			System.out.print(" ");
 			for(int j = 0; j < max_size;j++)
 			{
-				System.out.print(board[i][j]);
+				if(board[i][j] == ' ') System.out.print(cell_num);
+				else System.out.print(board[i][j]);
 				if(j != (max_size - 1)) System.out.print(" | ");
+				cell_num++;
 			}
 			System.out.println();
 			if(i != (max_size - 1)) System.out.println("-----------");
