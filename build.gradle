@@ -13,6 +13,7 @@
 apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'jacoco'
+apply plugin: 'org.uulib.gradle.markdown'
 
 mainClassName = "com._null.tictactoe.TicTacToe"
 
@@ -49,4 +50,15 @@ run {
 task copyjar(type: Copy){
 	from 'build/libs/TicTacToe.jar'
 	into '../tmp'
+}
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.org.uulib.gradle:grmarkdown:0.0.1"
+  }
 }
