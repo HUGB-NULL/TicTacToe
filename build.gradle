@@ -12,11 +12,6 @@
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'jacoco'
-
-version = '0.0.1'
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
 
 mainClassName = "com._null.tictactoe.TicTacToe"
 
@@ -25,7 +20,6 @@ repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
-    mavenCentral()
 }
 
 // In this section you declare the dependencies for your production and test code
@@ -51,16 +45,7 @@ run {
 }
 
 // Task that copies the executeable .jar file to the tmp directory. Stefan Vilberg
-task copyjar(type: Copy){
+task copyjar(type: Copy) {
 	from 'build/libs/TicTacToe.jar'
 	into '../tmp'
 }
-
-jacocoTestReport {
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-}
-
-check.dependsOn jacocoTestReport
