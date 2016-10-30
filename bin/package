@@ -3,4 +3,3 @@
 ./gradlew clean
 ./gradlew build
 ./gradlew jacocoTestReport
-./gradlew compileMarkdown
