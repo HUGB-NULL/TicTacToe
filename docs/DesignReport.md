@@ -46,7 +46,9 @@ It was carried out by four students, Gunnar Birnir Ólafsson, Hreinn Rúnarsson,
 
 * #### Class diagram
    ![alt text](http://i.imgur.com/pwc9F86.png "Class diagram")
+   
 * #### Updated class diagram
    ![alt text](http://i.imgur.com/bgw3PV1.png "Updated class diagram")
+   
 * #### Flowchart
    ![alt text](http://i.imgur.com/ngvZbsU.png "Flowchart")
